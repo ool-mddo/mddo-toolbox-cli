@@ -156,7 +156,7 @@ module LinkdownSimulation
       save_csv_file(reach_results_summary_table, "#{file_base}.test_summary.csv")
       # test_traceroute_result.rb reads fixed file name
       save_json_file(reach_results_summary, '.test_detail.json')
-      exec("bundle exec ruby #{__dir__}/lib/test_traceroute_result.rb -v silent")
+      exec("bundle exec ruby #{__dir__}/../lib/test_traceroute_result.rb -v silent")
     end
     # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
 
