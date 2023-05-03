@@ -6,6 +6,7 @@ require 'httpclient'
 module LinkdownSimulation
   # http client for linkdown simulation
   class MddoRestApiClient
+    # MDDO REST API HOST
     API_HOST = ENV.fetch('MDDO_API_HOST', 'localhost:15000')
 
     # @param [Logger] logger
@@ -41,6 +42,8 @@ module LinkdownSimulation
       response
     end
 
+    # @param [String] api_path PATH of REST API
+    # @return [HTTP::Message,nil] Reply
     def delete(api_path)
       url = "http://#{API_HOST}/#{api_path}"
       @logger.info "DELETE: #{url}"
