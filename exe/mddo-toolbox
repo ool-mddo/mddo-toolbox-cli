@@ -35,6 +35,24 @@ module LinkdownSimulation
       print_data(parse_json_str(response.body))
     end
 
+    desc 'query_snapshot [options]', 'Query questions to batfish'
+    method_option :network, aliases: :n, type: :string, required: true, desc: 'Network name'
+    method_option :snapshot, aliases: :s, type: :string, required: true, desc: 'Snapshot name'
+    def query_snapshot
+      url = "/queries/#{options[:network]}/#{options[:snapshot]}"
+      response = @rest_api.post(url)
+      print_data(parse_json_str(response.body))
+    end
+
+    desc 'fetch_topology [options]', 'Fetch topology data'
+    method_option :network, aliases: :n, type: :string, required: true, desc: 'Network name'
+    method_option :snapshot, aliases: :s, type: :string, required: true, desc: 'Snapshot name'
+    def fetch_topology
+      url = "/topologies/#{options[:network]}/#{options[:snapshot]}/topology"
+      response = @rest_api.fetch(url)
+      print_data(parse_json_str(response.body))
+    end
+
     desc 'fetch_snapshots [options]', 'Print snapshots in network on batfish'
     method_option :network, aliases: :n, type: :string, required: true, desc: 'Network name'
     def fetch_snapshots
