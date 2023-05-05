@@ -1,17 +1,18 @@
 # mddo-toolbox-cli
 ```
 Commands:
-  mddo-toolbox change_branch [options] b, --branch=BRANCH n, --network=NETWORK        # Change branch of configs/network repository
-  mddo-toolbox compare_subsets [options] n, --network=NETWORK s, --snapshot=SNAPSHOT  # Fetch subsets diff for all physical/logical snapshot topology to compare before/afte...
-  mddo-toolbox fetch_branch [options] n, --network=NETWORK                            # Print current branch of configs/network repository
-  mddo-toolbox fetch_snapshots [options] n, --network=NETWORK                         # Print snapshots in network on batfish
-  mddo-toolbox fetch_subsets [options] n, --network=NETWORK s, --snapshot=SNAPSHOT    # Fetch subsets for each layer in a snapshot topology
-  mddo-toolbox fetch_topology [options] n, --network=NETWORK s, --snapshot=SNAPSHOT   # Fetch topology data
-  mddo-toolbox generate_topology [options] n, --network=NETWORK                       # Generate topology from config
-  mddo-toolbox help [COMMAND]                                                         # Describe available commands or one specific command
-  mddo-toolbox load_snapshot [options] n, --network=NETWORK s, --snapshot=SNAPSHOT    # Load configs into batfish as a snapshot
-  mddo-toolbox query_snapshot [options] n, --network=NETWORK s, --snapshot=SNAPSHOT   # Query questions to batfish
-  mddo-toolbox test_reachability PATTERN_FILE                                         # Test L3 reachability with pattern file
+  mddo-toolbox change_branch [options] b, --branch=BRANCH n, --network=NETWORK                     # Change branch of configs/network repository
+  mddo-toolbox compare_subsets [options] n, --network=NETWORK s, --snapshot=SNAPSHOT               # Fetch subsets diff for all physical/logical snapshot topology ...
+  mddo-toolbox fetch_branch [options] n, --network=NETWORK                                         # Print current branch of configs/network repository
+  mddo-toolbox fetch_snapshots [options] n, --network=NETWORK                                      # Print snapshots in network on batfish
+  mddo-toolbox fetch_subsets [options] n, --network=NETWORK s, --snapshot=SNAPSHOT                 # Fetch subsets for each layer in a snapshot topology
+  mddo-toolbox fetch_topology [options] n, --network=NETWORK s, --snapshot=SNAPSHOT                # Fetch topology data
+  mddo-toolbox generate_topology [options] n, --network=NETWORK                                    # Generate topology from config
+  mddo-toolbox help [COMMAND]                                                                      # Describe available commands or one specific command
+  mddo-toolbox load_snapshot [options] n, --network=NETWORK s, --snapshot=SNAPSHOT                 # Load configs into batfish as a snapshot
+  mddo-toolbox query_snapshot [options] n, --network=NETWORK s, --snapshot=SNAPSHOT                # Query questions to batfish
+  mddo-toolbox snapshot_diff [options] d, --dst-ss=DST_SS n, --network=NETWORK s, --src-ss=SRC_SS  # View diff between snapshots in a network
+  mddo-toolbox test_reachability PATTERN_FILE                                                      # Test L3 reachability with pattern file
 ```
 ## Commands
 
@@ -148,6 +149,22 @@ Options:
   s, --snapshot=SNAPSHOT  # Snapshot name
 
 Query questions to batfish
+```
+
+### snapshot_diff
+
+```
+Usage:
+  mddo-toolbox snapshot_diff [options] d, --dst-ss=DST_SS n, --network=NETWORK s, --src-ss=SRC_SS
+
+Options:
+  n, --network=NETWORK        # Network name
+  s, --src-ss=SRC_SS          # Source snapshot name
+  d, --dst-ss=DST_SS          # Destination snapshot name
+  a, [--all], [--no-all]      # Print all includes unchanged object
+  c, [--color], [--no-color]  # Print diff with color
+
+View diff between snapshots in a network
 ```
 
 ### test_reachability

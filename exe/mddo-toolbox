@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require_relative '../lib/toolbox_cli_base'
+require 'netomox'
+require_relative '../lib/scenario_base'
 
 module MddoToolboxCli
   # rubocop:disable Metrics/ClassLength
@@ -177,6 +178,20 @@ module MddoToolboxCli
       exec("bundle exec ruby #{__dir__}/../lib/test_traceroute_result.rb -v silent")
     end
     # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
+
+    desc 'snapshot_diff [options]', 'View diff between snapshots in a network'
+    method_option :network, aliases: :n, type: :string, required: true, desc: 'Network name'
+    method_option :src_ss, aliases: :s, type: :string, required: true, desc: 'Source snapshot name'
+    method_option :dst_ss, aliases: :d, type: :string, required: true, desc: 'Destination snapshot name'
+    method_option :all, type: :boolean, default: false, aliases: :a, desc: 'Print all includes unchanged object'
+    method_option :color, type: :boolean, default: false, aliases: :c, desc: 'Print diff with color'
+    def snapshot_diff
+      url = "/conduct/#{options[:network]}/snapshot_diff/#{options[:src_ss]}/#{options[:dst_ss]}"
+      response = @rest_api.fetch(url)
+      topology_diff = response.body # json string (NOT ruby object)
+      diff_view = Netomox::DiffView::Viewer.new(data: topology_diff, print_all: options[:all], color: options[:color])
+      puts diff_view
+    end
 
     private
 
