@@ -2,9 +2,10 @@
 
 require 'json'
 require 'httpclient'
+require_relative 'mddo_toolbox_cli'
 
-module LinkdownSimulation
-  # http client for linkdown simulation
+module MddoToolboxCli
+  # http client for Mddo rest api
   class MddoRestApiClient
     # MDDO REST API HOST
     API_HOST = ENV.fetch('MDDO_API_HOST', 'localhost:15000')

@@ -4,10 +4,10 @@ require 'logger'
 require_relative 'mddo_rest_api_client'
 
 # Linkdown simulation module and its common functions
-module LinkdownSimulation
+module MddoToolboxCli
   # logger for linkdown simulation
   @logger = Logger.new($stderr)
-  @logger.progname = 'simulator'
+  @logger.progname = 'mddo-toolbox'
   @logger.level = Logger::INFO
 
   # rest api client (http client)

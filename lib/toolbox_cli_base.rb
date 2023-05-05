@@ -5,15 +5,15 @@ require 'fileutils'
 require 'json'
 require 'thor'
 require 'yaml'
-require_relative 'linkdown_simulation'
+require_relative 'mddo_toolbox_cli'
 
-module LinkdownSimulation
+module MddoToolboxCli
   # scenario base class
-  class ScenarioBase < Thor
+  class ToolboxCliBase < Thor
     def initialize(*args)
       super
-      @logger = LinkdownSimulation.logger
-      @rest_api = LinkdownSimulation.rest_api
+      @logger = MddoToolboxCli.logger
+      @rest_api = MddoToolboxCli.rest_api
     end
 
     private
@@ -22,7 +22,7 @@ module LinkdownSimulation
     # @return @void
     def change_log_level(severity)
       # alias of the module function
-      LinkdownSimulation.change_log_level(severity)
+      MddoToolboxCli.change_log_level(severity)
     end
 
     # @param [String] file_path File path
