@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 
 require 'netomox'
-require_relative '../lib/scenario_base'
+require_relative '../lib/toolbox_cli_base'
 
 module MddoToolboxCli
   # rubocop:disable Metrics/ClassLength
