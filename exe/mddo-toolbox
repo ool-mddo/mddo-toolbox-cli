@@ -1,13 +1,13 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require_relative '../lib/scenario_base'
+require_relative '../lib/toolbox_cli_base'
 
-module LinkdownSimulation
+module MddoToolboxCli
   # rubocop:disable Metrics/ClassLength
 
   # Linkdown simulation commands
-  class Simulator < ScenarioBase
+  class ToolboxCli < ToolboxCliBase
     desc 'change_branch [options]', 'Change branch of configs/network repository'
     method_option :network, aliases: :n, type: :string, required: true, desc: 'Network name'
     method_option :branch, aliases: :b, type: :string, required: true, desc: 'Branch name'
@@ -261,4 +261,4 @@ module LinkdownSimulation
 end
 
 # start CLI tool
-LinkdownSimulation::Simulator.start(ARGV)
+MddoToolboxCli::ToolboxCli.start(ARGV)
