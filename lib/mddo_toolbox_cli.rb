@@ -5,6 +5,9 @@ require_relative 'mddo_rest_api_client'
 
 # Linkdown simulation module and its common functions
 module MddoToolboxCli
+  # mddo_toolbox_cli version
+  VERSION = '0.1.0.pre1'
+
   # logger for linkdown simulation
   @logger = Logger.new($stderr)
   @logger.progname = 'mddo-toolbox'
