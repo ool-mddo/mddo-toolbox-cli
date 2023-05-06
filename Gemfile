@@ -8,5 +8,5 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 gemspec
 
 source 'https://rubygems.pkg.github.com/ool-mddo' do
-  gem 'netomox', '0.3.0.pre1'
+  gem 'netomox', '0.3.0.pre2'
 end

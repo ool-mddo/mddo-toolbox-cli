@@ -35,7 +35,7 @@ Gem::Specification.new do |spec|
 
   # source rubygems.pkg.github.com/ool-mddo
   # see: Gemfile
-  spec.add_runtime_dependency 'netomox', '0.3.0.pre1'
+  spec.add_runtime_dependency 'netomox', '0.3.0.pre2'
 
   spec.add_runtime_dependency 'httpclient', '~> 2.8'
   spec.add_runtime_dependency 'test-unit', '~> 3.5'
