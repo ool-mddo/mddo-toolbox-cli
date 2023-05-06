@@ -2,7 +2,7 @@
 
 lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'mddo_toolbox_cli'
+require 'mddo_toolbox_cli_version'
 
 Gem::Specification.new do |spec|
   spec.required_ruby_version = '>= 3.1.0'
