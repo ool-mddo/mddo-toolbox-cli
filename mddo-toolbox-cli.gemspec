@@ -35,14 +35,10 @@ Gem::Specification.new do |spec|
 
   # source rubygems.pkg.github.com/ool-mddo
   # see: Gemfile
-  spec.add_runtime_dependency 'netomox', '0.3.0.pre2'
+  spec.add_runtime_dependency 'netomox', '0.3.0.pre3'
 
   spec.add_runtime_dependency 'httpclient', '~> 2.8'
   spec.add_runtime_dependency 'test-unit', '~> 3.5'
   spec.add_runtime_dependency 'thor', '~> 1.2'
-  spec.add_development_dependency 'bundler', '~> 2.0'
-  spec.add_development_dependency 'rubocop', '~> 1.37'
-  spec.add_development_dependency 'rubocop-rake', '~> 0.6'
-  spec.add_development_dependency 'yard', '~> 0.9'
   spec.metadata['rubygems_mfa_required'] = 'true'
 end

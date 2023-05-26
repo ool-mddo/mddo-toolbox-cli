@@ -8,5 +8,11 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 gemspec
 
 source 'https://rubygems.pkg.github.com/ool-mddo' do
-  gem 'netomox', '0.3.0.pre2'
+  gem 'netomox', '0.3.0.pre3'
 end
+
+# development dependency
+gem 'bundler', '~> 2.0'
+gem 'rubocop', '~> 1.37'
+gem 'rubocop-rake', '~> 0.6'
+gem 'yard', '~> 0.9'

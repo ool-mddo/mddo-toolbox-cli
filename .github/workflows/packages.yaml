@@ -1,6 +1,9 @@
 name: build and push rubygem package
 
-on: [push]
+on:
+  push:
+    paths:
+      - "lib/mddo_toolbox_cli_version.rb"
 
 jobs:
   build:
