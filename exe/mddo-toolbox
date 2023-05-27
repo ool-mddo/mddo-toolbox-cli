@@ -11,7 +11,7 @@ module MddoToolboxCli
   class ToolboxCli < ToolboxCliBase
     desc 'version', 'Show version'
     def version
-      puts "mddo-toolbox/#{MddoToolboxCli::VERSION} (with netomox/#{Netomox::VERSION}"
+      puts "mddo-toolbox/#{MddoToolboxCli::VERSION} (with netomox/#{Netomox::VERSION})"
     end
 
     desc 'change_branch [options]', 'Change branch of configs/network repository'

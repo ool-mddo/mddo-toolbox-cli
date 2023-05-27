@@ -2,5 +2,5 @@
 
 module MddoToolboxCli
   # mddo_toolbox_cli version
-  VERSION = '0.1.0.pre4'
+  VERSION = '0.1.0'
 end
