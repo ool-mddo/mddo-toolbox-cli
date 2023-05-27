@@ -9,6 +9,11 @@ module MddoToolboxCli
 
   # Linkdown simulation commands
   class ToolboxCli < ToolboxCliBase
+    desc 'version', 'Show version'
+    def version
+      puts "mddo-toolbox/#{MddoToolboxCli::VERSION} (with netomox/#{Netomox::VERSION})"
+    end
+
     desc 'change_branch [options]', 'Change branch of configs/network repository'
     method_option :network, aliases: :n, type: :string, required: true, desc: 'Network name'
     method_option :branch, aliases: :b, type: :string, required: true, desc: 'Branch name'

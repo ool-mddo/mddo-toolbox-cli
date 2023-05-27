@@ -2,6 +2,7 @@
 
 require 'logger'
 require_relative 'mddo_rest_api_client'
+require_relative 'mddo_toolbox_cli_version'
 
 # Linkdown simulation module and its common functions
 module MddoToolboxCli
