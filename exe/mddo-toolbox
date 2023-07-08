@@ -67,6 +67,30 @@ module MddoToolboxCli
       print_data(parse_json_str(response.body))
     end
 
+    desc 'check_l1_descr [options]', 'Check Layer1 interface description'
+    method_option :format, aliases: :f, default: 'json', type: :string, enum: %w[yaml json], desc: 'Output format'
+    method_option :network, aliases: :n, type: :string, required: true, desc: 'Network name'
+    method_option :snapshot, aliases: :s, type: :string, required: true, desc: 'Snapshot name'
+    method_option :layer, aliases: :l, type: :string, default: 'layer1', desc: 'Layer name'
+    def fetch_l1_descr
+      network, snapshot, layer = %i[network snapshot layer].map { |k| options[k] }
+      url = "/topologies/#{network}/#{snapshot}/topology/#{layer}/interface_description"
+      response = @rest_api.fetch(url)
+      print_data(parse_json_str(response.body))
+    end
+
+    desc 'check_l1_descr [options]', 'Check Layer1 interface description'
+    method_option :format, aliases: :f, default: 'json', type: :string, enum: %w[yaml json], desc: 'Output format'
+    method_option :network, aliases: :n, type: :string, required: true, desc: 'Network name'
+    method_option :snapshot, aliases: :s, type: :string, required: true, desc: 'Snapshot name'
+    method_option :layer, aliases: :l, type: :string, default: 'layer1', desc: 'Layer name'
+    def check_l1_descr
+      network, snapshot, layer = %i[network snapshot layer].map { |k| options[k] }
+      url = "/topologies/#{network}/#{snapshot}/topology/#{layer}/interface_description/check"
+      response = @rest_api.fetch(url)
+      print_data(parse_json_str(response.body))
+    end
+
     # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
     desc 'generate_topology [options]', 'Generate topology from config'
     method_option :model_info, aliases: :m, type: :string, default: 'model_info.json', desc: 'Model info (json)'
