@@ -1,18 +1,20 @@
 # mddo-toolbox-cli
 ```
 Commands:
-  mddo-toolbox change_branch [options] b, --branch=BRANCH n, --network=NETWORK                     # Change branch of configs/n...
-  mddo-toolbox compare_subsets [options] n, --network=NETWORK s, --snapshot=SNAPSHOT               # Fetch subsets diff for all...
-  mddo-toolbox fetch_branch [options] n, --network=NETWORK                                         # Print current branch of co...
-  mddo-toolbox fetch_snapshots [options] n, --network=NETWORK                                      # Print snapshots in network...
-  mddo-toolbox fetch_subsets [options] n, --network=NETWORK s, --snapshot=SNAPSHOT                 # Fetch subsets for each lay...
+  mddo-toolbox change_branch [options] b, --branch=BRANCH n, --network=NETWORK                     # Change branch of configs/network...
+  mddo-toolbox check_l1_descr [options] n, --network=NETWORK s, --snapshot=SNAPSHOT                # Check Layer1 interface description
+  mddo-toolbox check_l1_descr [options] n, --network=NETWORK s, --snapshot=SNAPSHOT                # Check Layer1 interface description
+  mddo-toolbox compare_subsets [options] n, --network=NETWORK s, --snapshot=SNAPSHOT               # Fetch subsets diff for all physi...
+  mddo-toolbox fetch_branch [options] n, --network=NETWORK                                         # Print current branch of configs/...
+  mddo-toolbox fetch_snapshots [options] n, --network=NETWORK                                      # Print snapshots in network on ba...
+  mddo-toolbox fetch_subsets [options] n, --network=NETWORK s, --snapshot=SNAPSHOT                 # Fetch subsets for each layer in ...
   mddo-toolbox fetch_topology [options] n, --network=NETWORK s, --snapshot=SNAPSHOT                # Fetch topology data
   mddo-toolbox generate_topology [options] n, --network=NETWORK                                    # Generate topology from config
-  mddo-toolbox help [COMMAND]                                                                      # Describe available command...
-  mddo-toolbox load_snapshot [options] n, --network=NETWORK s, --snapshot=SNAPSHOT                 # Load configs into batfish ...
+  mddo-toolbox help [COMMAND]                                                                      # Describe available commands or o...
+  mddo-toolbox load_snapshot [options] n, --network=NETWORK s, --snapshot=SNAPSHOT                 # Load configs into batfish as a s...
   mddo-toolbox query_snapshot [options] n, --network=NETWORK s, --snapshot=SNAPSHOT                # Query questions to batfish
-  mddo-toolbox snapshot_diff [options] d, --dst-ss=DST_SS n, --network=NETWORK s, --src-ss=SRC_SS  # View diff between snapshot...
-  mddo-toolbox test_reachability PATTERN_FILE                                                      # Test L3 reachability with ...
+  mddo-toolbox snapshot_diff [options] d, --dst-ss=DST_SS n, --network=NETWORK s, --src-ss=SRC_SS  # View diff between snapshots in a...
+  mddo-toolbox test_reachability PATTERN_FILE                                                      # Test L3 reachability with patter...
   mddo-toolbox version                                                                             # Show version
 ```
 ## Commands
@@ -28,6 +30,42 @@ Options:
   b, --branch=BRANCH    # Branch name
 
 Change branch of configs/network repository
+```
+
+### check_l1_descr
+
+```
+Usage:
+  mddo-toolbox check_l1_descr [options] n, --network=NETWORK s, --snapshot=SNAPSHOT
+
+Options:
+  f, [--format=FORMAT]    # Output format
+                          # Default: json
+                          # Possible values: yaml, json
+  n, --network=NETWORK    # Network name
+  s, --snapshot=SNAPSHOT  # Snapshot name
+  l, [--layer=LAYER]      # Layer name
+                          # Default: layer1
+
+Check Layer1 interface description
+```
+
+### check_l1_descr
+
+```
+Usage:
+  mddo-toolbox check_l1_descr [options] n, --network=NETWORK s, --snapshot=SNAPSHOT
+
+Options:
+  f, [--format=FORMAT]    # Output format
+                          # Default: json
+                          # Possible values: yaml, json
+  n, --network=NETWORK    # Network name
+  s, --snapshot=SNAPSHOT  # Snapshot name
+  l, [--layer=LAYER]      # Layer name
+                          # Default: layer1
+
+Check Layer1 interface description
 ```
 
 ### compare_subsets
