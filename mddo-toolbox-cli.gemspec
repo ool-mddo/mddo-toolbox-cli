@@ -5,7 +5,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'mddo_toolbox_cli_version'
 
 Gem::Specification.new do |spec|
-  spec.required_ruby_version = '>= 3.1.0'
+  spec.required_ruby_version = '>= 3.0.0'
 
   spec.name          = 'mddo-toolbox-cli'
   spec.version       = MddoToolboxCli::VERSION
@@ -35,7 +35,7 @@ Gem::Specification.new do |spec|
 
   # source rubygems.pkg.github.com/ool-mddo
   # see: Gemfile
-  spec.add_runtime_dependency 'netomox', '>= 0.5.0'
+  spec.add_runtime_dependency 'netomox', '>= 0.9.1'
 
   spec.add_runtime_dependency 'httpclient', '~> 2.8'
   spec.add_runtime_dependency 'test-unit', '~> 3.5'

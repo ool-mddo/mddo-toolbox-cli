@@ -27,7 +27,7 @@ module MddoToolboxCli
       data_str = data.to_s.length < str_limit ? data.to_s : "#{data.to_s[0, str_limit - 3]}..."
       url = "http://#{API_HOST}/#{api_path}"
       @logger.info "POST: #{url}, data=#{data_str}"
-      response = @http_client.post(url, body:, header:)
+      response = @http_client.post(url, body: body, header: header)
       warn "# [ERROR] #{response.status} < POST #{url}, data=#{data_str}" if error_response?(response)
       response
     end

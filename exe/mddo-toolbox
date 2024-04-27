@@ -176,7 +176,7 @@ module MddoToolboxCli
       url = "/conduct/#{network}/reachability"
       api_opts = {
         snapshots: select_snapshots(network, options[:snapshot_re]),
-        test_pattern:
+        test_pattern: test_pattern
       }
       response = @rest_api.post(url, api_opts)
       response_data = parse_json_str(response.body)
@@ -286,7 +286,7 @@ module MddoToolboxCli
           snapshot_pair[:physical][:file] = 'topology.json'
           # for logical snapshot
           logical_snapshot_index_list = snapshot_pair[:logical].map do |sp|
-            { network:, snapshot: sp[:target_snapshot_name], label: sp[:description], file: 'topology.json' }
+            { network: network, snapshot: sp[:target_snapshot_name], label: sp[:description], file: 'topology.json' }
           end
           [snapshot_pair[:physical], logical_snapshot_index_list]
         end
